@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() , Callback<NewsArticles> {
         setContentView(R.layout.activity_main)
 
         var newsData = NewsApiService.create()
-        newsData.getBusinessNews().enqueue(this)
+        newsData.getTopHighlights().enqueue(this)
 
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = NewsAdapter(data)

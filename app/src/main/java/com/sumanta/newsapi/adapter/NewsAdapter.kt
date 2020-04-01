@@ -14,6 +14,7 @@ class NewsAdapter(var newsData: List<Article>):RecyclerView.Adapter<NewsAdapter.
     class ViewHolder(val view : View) : RecyclerView.ViewHolder(view){
         val newsImage = view.news_image
         val newsText = view.news_text
+        val description = view.news_dtext
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -28,6 +29,7 @@ class NewsAdapter(var newsData: List<Article>):RecyclerView.Adapter<NewsAdapter.
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.newsText.text = newsData[position].title
+        holder.description.text = newsData[position].description
         Picasso.get().load(newsData[position].urlToImage).into(holder.newsImage)
     }
 }
